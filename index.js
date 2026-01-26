@@ -1,5 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose")
+const swaggerUi = require("swagger-ui-express");
+const swaggerFile = require("./swagger-output.json");
 const config = require("./config/config")
 const routes = require("./routes")
 const { errorHandler, errorConverter } = require("./middleware/error")
@@ -16,6 +17,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.use('/api', routes)
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use((req, res, next) => {
     next(new ApiError(httpStatus.NOT_FOUND, 'Not Found'))
