@@ -1,0 +1,6 @@
+const roles = [
+    "user", 
+    "superadmin"
+]
+
+
