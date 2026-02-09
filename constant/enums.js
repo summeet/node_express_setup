@@ -1,0 +1,6 @@
+const OTP_PURPOSE = {
+    LOGIN: "LOGIN",
+    SIGNUP: "SIGNUP",
+    RESET_PASSWORD: "RESET_PASSWORD"
+};
+  

@@ -31,7 +31,7 @@ const queryUsers = async () => {
  * @returns {Promise<User>}
  */
 const getUserById = async (userId) => {
-    const user = User.findById(userId)
+    const user = await User.findById(userId)
     if (!user) {
         throw new ApiError(httpStatus.NOT_FOUND, "User not found")
     }
@@ -53,9 +53,23 @@ const updateUser = async (userId, updateBody) => {
     return user
 }
 
+
+/**
+ * Delete a user
+ * @param {ObjectId} userId 
+ * @returns 
+ */
 const deleteUser = async (userId) => {
     const result = await User.deleteOne({ _id: userId })
     if (result.deletedCount === 0) {
+        throw new ApiError(httpStatus.NOT_FOUND, "User not found")
+    }
+    return result
+}
+
+const getUserByContact = async (contact) => {
+    const result = await User.findOne({ contact })
+    if (!result) {
         throw new ApiError(httpStatus.NOT_FOUND, "User not found")
     }
     return result
@@ -66,5 +80,6 @@ module.exports = {
     queryUsers,
     getUserById,
     updateUser,
-    deleteUser
+    deleteUser,
+    getUserByContact
 }

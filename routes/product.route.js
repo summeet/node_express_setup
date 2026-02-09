@@ -1,0 +1,19 @@
+const express = require("express")
+const Router = express.Router()
+const productController = require("../controller/product.controller")
+const authorize = require("../middleware/authorize")
+const auth = require("../middleware/auth")
+
+Router.post("/", auth, authorize(['createProduct']), productController.createProduct)
+Router.get("/", auth, authorize(['queryProducts']), productController.queryProducts)
+Router.get("/:id", auth, authorize(['getProductById']), productController.getProductById)
+Router.put("/:id", auth, authorize(['updateProduct']), productController.updateProduct)
+Router.delete("/:id", auth, authorize(['deleteProduct']), productController.deleteProduct)
+Router.get("/menu/:menuId", auth, authorize(['getProductByMenuId']), productController.getProductByMenuId)
+Router.get("/restaurant/:restaurantId", auth, authorize(['getProductsByRestaurantId']), productController.getProductsByRestaurantId)    
+Router.post("/:productId/variants", auth, authorize(['addVariants']), productController.addVariants)
+Router.put("/:productId/variants/:variantId", auth, authorize(['updateVariant']), productController.updateVariant)
+Router.get("/:productId/variants", auth, authorize(['queryVariants']), productController.queryVariants)
+Router.delete("/:productId/variants/:variantId", auth, authorize(['removeVariant']), productController.removeVariant)
+
+module.exports = Router

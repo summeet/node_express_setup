@@ -35,7 +35,7 @@ const updateUser = catchAsync(async (req, res) => {
 })
 
 const deleteUser = catchAsync(async (req, res) => {
-    const result = await userService.deleteUser(req.params.id)
+    await userService.deleteUser(req.params.id)
     res.status(httpStatus.NO_CONTENT).send({
         message: "User deleted successfully"
     })
