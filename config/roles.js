@@ -4,7 +4,7 @@ const allRoles = {
         'createRestaurant', 'queryRestaurants', 'getRestaurantById', 'updateRestaurant', 'deleteRestaurant',
         'createCategory', 'queryCategories', 'getCategoryById', 'updateCategory', 'deleteCategory', 'getCategoryByRestaurantId',
         'createProduct', 'queryProducts', 'getProductById', 'updateProduct', 'deleteProduct',
-        'queryProductsByRestaurantId', 'queryProductsByMenuId', 'getProductByMenuId',
+        'queryProductsByRestaurantId', 'queryProductsByMenuId', 'getProductByMenuId', 'addBulkProducts',
         'addVariants', 'updateVariant', 'queryVariants', 'removeVariant',
         'createCart', 'getCart', 'updateCart', 'deleteCart', 'clearCart',
     ],

@@ -99,6 +99,10 @@ const removeVariant = async (productId, variantId) => {
     return product
 }
 
+const addBulkProducts = async (products) => {
+    return await Product.insertMany(products)
+}
+
 module.exports = {
     createProduct,
     queryProductsByRestaurantId,
@@ -111,5 +115,6 @@ module.exports = {
     addVariants,
     updateVariant,
     queryVariants,
-    removeVariant
+    removeVariant,
+    addBulkProducts
 }

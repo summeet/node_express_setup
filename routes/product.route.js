@@ -15,5 +15,6 @@ Router.post("/:productId/variants", auth, authorize(['addVariants']), productCon
 Router.put("/:productId/variants/:variantId", auth, authorize(['updateVariant']), productController.updateVariant)
 Router.get("/:productId/variants", auth, authorize(['queryVariants']), productController.queryVariants)
 Router.delete("/:productId/variants/:variantId", auth, authorize(['removeVariant']), productController.removeVariant)
+Router.post("/bulk", auth, authorize(['addBulkProducts']), productController.addBulkProducts)
 
 module.exports = Router

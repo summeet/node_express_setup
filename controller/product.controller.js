@@ -97,6 +97,14 @@ const removeVariant = catchAsync(async (req, res) => {
     })
 })
 
+const addBulkProducts = catchAsync(async (req, res) => {
+    const products = await productService.addBulkProducts(req.body)
+    res.status(httpStatus.CREATED).send({
+        message: "Products created successfully",
+        data: products
+    })
+})
+
 module.exports = {
     createProduct,
     queryProducts,
@@ -108,5 +116,6 @@ module.exports = {
     addVariants,
     updateVariant,
     queryVariants,
-    removeVariant
+    removeVariant,
+    addBulkProducts
 }

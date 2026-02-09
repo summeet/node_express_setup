@@ -5,6 +5,7 @@ const authRoute = require("./auth.route");
 const restaurantRoute = require("./restaurant.route");
 const categoryRoute = require("./category.route");
 const productRoute = require("./product.route");
+const cartRoute = require("./cart.route");
 const addressRoute = require("./address.route");
 
 Router.use("/users", userRoute)
@@ -13,5 +14,6 @@ Router.use("/restaurants", restaurantRoute)
 Router.use("/categories", categoryRoute)
 Router.use("/products", productRoute)       
 Router.use("/address", addressRoute)
+Router.use("/cart", cartRoute)
 
 module.exports = Router

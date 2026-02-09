@@ -1,4 +1,4 @@
-const orderService = require("../service/order.service")  
+const orderService = require("../services/order.service")  
 const catchAsync = require("../utils/catchAsync")
 
 
