@@ -36,7 +36,7 @@ const addCart = async (userId, productId, quantity) => {
 }
 
 const getCart = async (userId) => {
-    const cart = await Cart.findOne({ userId }).populate("items.productId")
+    const cart = await Cart.findOne({ userId })
     if (!cart) {
         throw new ApiError(404, "Cart not found")
     }
@@ -46,11 +46,12 @@ const getCart = async (userId) => {
 const updateCart = async (userId, productId, quantity) => {
     const cart = await getCart(userId)
     const item = cart.items.find(item => item.productId.toString() === productId)
+   
     if (!item) {
         throw new ApiError(404, "Item not found in cart")
     }
     item.quantity = quantity
-    item.price = item.quantity * item.productId.price
+    item.price = item.quantity * item.price
     await cart.save()
     return cart
 }

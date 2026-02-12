@@ -12,7 +12,7 @@ const createProduct = async (productBody) => {
 }
 
 const queryProductsByRestaurantId = async (restaurantId) => {
-    const products = await Product.find({ restaurantId: mongoose.Types.ObjectId(restaurantId) })
+    const products = await Product.find({ restaurantId: new mongoose.Types.ObjectId(restaurantId) })
     return products
 }
 
@@ -50,7 +50,7 @@ const queryProductsByMenuId = async (menuId) => {
 }
 
 const getProductByMenuId = async (menuId) => {
-    const products = await Product.findOne({ menuId: new mongoose.Types.ObjectId(menuId)  })
+    const products = await Product.findOne({ menuId: new mongoose.Types.ObjectId(menuId) })
     return products
 }
 
@@ -59,19 +59,19 @@ const addVariants = async (productId, variants) => {
         $push: {
             variants
         }
-     }, { new: true })
+    }, { new: true })
     return product
 }
 
 const updateVariant = async (productId, variantId, updateBody) => {
     const product = await getProductById(productId)
-    if(!product){
+    if (!product) {
         throw new ApiError(httpStatus.NOT_FOUND, "Product not found")
     }
     const variant = await product.variants.id(variantId)
-    if(!variant){
+    if (!variant) {
         throw new ApiError(httpStatus.NOT_FOUND, "Variant not found")
-    }   
+    }
     Object.assign(variant, updateBody)
     await product.save()
     return product
@@ -79,7 +79,7 @@ const updateVariant = async (productId, variantId, updateBody) => {
 
 const queryVariants = async (productId) => {
     const product = await getProductById(productId)
-    if(!product){
+    if (!product) {
         throw new ApiError(httpStatus.NOT_FOUND, "Product not found")
     }
     return product.variants
@@ -87,11 +87,11 @@ const queryVariants = async (productId) => {
 
 const removeVariant = async (productId, variantId) => {
     const product = await getProductById(productId)
-    if(!product){
+    if (!product) {
         throw new ApiError(httpStatus.NOT_FOUND, 'Variant not found')
     }
     const variant = await product.variants.id(variantId)
-    if(!variant){
+    if (!variant) {
         throw new ApiError(httpStatus.NOT_FOUND, 'Variant not found')
     }
     product.variants.pull(variantId)

@@ -9,8 +9,10 @@ const allRoles = {
         'createCart', 'getCart', 'updateCart', 'deleteCart', 'clearCart',
     ],
     user: [
-        'createProduct', 'queryProducts', 'getProductById', 'updateProduct', 'deleteProduct',
+        'queryProducts', 'getProductById', 'updateProduct',
         'createCart', 'getCart', 'updateCart', 'deleteCart', 'clearCart',
+        'createCategory', 'queryCategories', 'getCategoryById', 'updateCategory', 'deleteCategory', 'getCategoryByRestaurantId',
+        'createRestaurant', 'queryRestaurants', 'getRestaurantById',
     ]
 }
 

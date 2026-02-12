@@ -9,6 +9,8 @@ const connectDatabase = require("./config/db")
 const httpStatus = require("./constant/httpStatus")
 
 const app = express();
+const cors = require("cors");
+app.use(cors());
 
 connectDatabase()
 
