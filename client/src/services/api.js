@@ -17,6 +17,15 @@ api.interceptors.request.use((config) => {
     return config;
 });
 
+api.interceptors.response.use(config => config, error => {
+    if (error.response.status === 401) {
+        localStorage.removeItem('token')
+        localStorage.removeItem('user')
+        window.location.href = '/login'
+    }
+    throw error
+})
+
 // Restaurant APIs
 export const getRestaurants = () => api.get('/restaurants');
 export const getRestaurantById = (id) => api.get(`/restaurants/${id}`);
@@ -41,5 +50,35 @@ export const addToCart = (userId, productId, quantity = 1) => api.post('/cart/ad
 export const updateCartQuantity = (userId, productId, quantity) => api.put('/cart/update', { userId, productId, quantity });
 export const removeFromCart = (userId, productId) => api.delete('/cart/delete', { data: { userId, productId } });
 export const clearCart = (userId) => api.delete(`/cart/clear/${userId}`);
+
+// Checkout APIs
+export const createCheckout = (checkoutData) => api.post('/checkout', checkoutData);
+export const getCheckoutById = (id) => api.get(`/checkout/${id}`);
+
+// Order APIs
+export const createOrder = (orderData) => api.post('/orders', orderData);
+export const getOrdersByUserId = (userId) => api.get(`/orders/user/${userId}`);
+export const getOrderById = (id) => api.get(`/orders/${id}`);
+
+// Notification APIs (External API)
+const NOTIFICATION_API_URL = 'https://nedevbe.zimbea.com/api';
+
+export const getNotifications = () => {
+    const token = localStorage.getItem('token');
+    return axios.get(`${NOTIFICATION_API_URL}/notifications`, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    });
+};
+
+export const markAllNotificationsAsRead = () => {
+    const token = localStorage.getItem('token');
+    return axios.patch(`${NOTIFICATION_API_URL}/notifications/read-all`, {}, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    });
+};
 
 export default api;

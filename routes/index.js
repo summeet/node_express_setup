@@ -12,7 +12,7 @@ Router.use("/users", userRoute)
 Router.use("/auth", authRoute)
 Router.use("/restaurants", restaurantRoute)
 Router.use("/categories", categoryRoute)
-Router.use("/products", productRoute)       
+Router.use("/products", productRoute)
 Router.use("/address", addressRoute)
 Router.use("/cart", cartRoute)
 

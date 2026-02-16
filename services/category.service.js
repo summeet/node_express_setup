@@ -12,7 +12,7 @@ const queryCategories = async () => {
 
 const getCategoryById = async (id) => {
     const category = await categoryModel.findById(id)
-    if(!category){
+    if (!category) {
         throw new ApiError(httpStatus.NOT_FOUND, "Category not found")
     }
     return category
@@ -20,7 +20,7 @@ const getCategoryById = async (id) => {
 
 const updateCategory = async (id, category) => {
     const updatedCategory = await categoryModel.findByIdAndUpdate(id, category, { new: true })
-    if(!updatedCategory){
+    if (!updatedCategory) {
         throw new ApiError(httpStatus.NOT_FOUND, "Category not found")
     }
     return updatedCategory
@@ -28,7 +28,7 @@ const updateCategory = async (id, category) => {
 
 const deleteCategory = async (id) => {
     const category = await categoryModel.findByIdAndDelete(id)
-    if(!category){
+    if (!category) {
         throw new ApiError(httpStatus.NOT_FOUND, "Category not found")
     }
 }

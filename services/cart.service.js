@@ -18,6 +18,7 @@ const addCart = async (userId, productId, quantity) => {
             }]
         })
         await newCart.save()
+        await newCart.populate('items.productId')
         return newCart
     }
     const item = cart.items.find(item => item.productId.toString() === productId)
@@ -32,11 +33,12 @@ const addCart = async (userId, productId, quantity) => {
         })
     }
     await cart.save()
+    await cart.populate('items.productId')
     return cart
 }
 
 const getCart = async (userId) => {
-    const cart = await Cart.findOne({ userId })
+    const cart = await Cart.findOne({ userId }).populate('items.productId')
     if (!cart) {
         throw new ApiError(404, "Cart not found")
     }
@@ -45,25 +47,27 @@ const getCart = async (userId) => {
 
 const updateCart = async (userId, productId, quantity) => {
     const cart = await getCart(userId)
-    const item = cart.items.find(item => item.productId.toString() === productId)
-   
+    const item = cart.items.find(item => item.productId._id.toString() === productId)
+
     if (!item) {
         throw new ApiError(404, "Item not found in cart")
     }
     item.quantity = quantity
     item.price = item.quantity * item.price
     await cart.save()
+    await cart.populate('items.productId')
     return cart
 }
 
 const deleteCart = async (userId, productId) => {
     const cart = await getCart(userId)
-    const item = cart.items.find(item => item.productId.toString() === productId)
+    const item = cart.items.find(item => item.productId._id.toString() === productId)
     if (!item) {
         throw new ApiError(404, "Item not found in cart")
     }
-    cart.items = cart.items.filter(item => item.productId.toString() !== productId)
+    cart.items = cart.items.filter(item => item.productId._id.toString() !== productId)
     await cart.save()
+    await cart.populate('items.productId')
     return cart
 }
 
@@ -71,6 +75,7 @@ const clearCart = async (userId) => {
     const cart = await getCart(userId)
     cart.items = []
     await cart.save()
+    await cart.populate('items.productId')
     return cart
 }
 

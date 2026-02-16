@@ -10,7 +10,6 @@ const Home = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [cartCount, setCartCount] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -32,7 +31,7 @@ const Home = () => {
 
     return (
         <div className="min-h-screen bg-background text-text">
-            <Navbar cartCount={cartCount} />
+            <Navbar />
             <Hero />
             <CategoryList categories={categories} />
             <RestaurantList restaurants={restaurants} />

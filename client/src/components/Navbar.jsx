@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { Utensils, Search, ShoppingCart, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
+import NotificationDropdown from './NotificationDropdown';
+import { useCart } from '../contexts/CartContext';
 
-const Navbar = ({ cartCount }) => {
+const Navbar = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+    const { cartCount } = useCart();
+
 
     const handleLogout = () => {
         localStorage.removeItem('token');
@@ -17,6 +21,7 @@ const Navbar = ({ cartCount }) => {
     const navigateToCart = () => {
         navigate('/cart');
     }
+
 
     return (
         <nav className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-white/20">
@@ -43,14 +48,15 @@ const Navbar = ({ cartCount }) => {
                             Search Food
                         </span>
                     </button>
-                    <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
-                        <ShoppingCart className="w-6 h-6 text-text" onClick={navigateToCart}/>
+                    <NotificationDropdown />
+                    <Link to="/cart" className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+                        <ShoppingCart className="w-6 h-6 text-text" onClick={navigateToCart} />
                         {cartCount > 0 && (
                             <span className="absolute top-0 right-0 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full border-2 border-white font-bold">
                                 {cartCount}
                             </span>
                         )}
-                    </button>
+                    </Link>
 
                     {user ? (
                         <div className="flex items-center gap-4">

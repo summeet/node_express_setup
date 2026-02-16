@@ -6,6 +6,7 @@ import RestaurantDetails from './pages/RestaurantDetails';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import CartPage from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 const App = () => {
   return (
@@ -36,7 +37,8 @@ const App = () => {
       />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<CartPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/restaurant/:id" element={<RestaurantDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
