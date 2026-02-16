@@ -13,6 +13,8 @@ const allRoles = {
         'createCart', 'getCart', 'updateCart', 'deleteCart', 'clearCart',
         'createCategory', 'queryCategories', 'getCategoryById', 'updateCategory', 'deleteCategory', 'getCategoryByRestaurantId',
         'createRestaurant', 'queryRestaurants', 'getRestaurantById',
+        'createAddress', 'updateAddress', 'deleteAddress', 'getAddressById', 'getAddressesByUserId', 'updateDefaultAddress', 'getDefaultAddress',
+        'createOrder', 'getOrdersByUserId', 'getOrderById'
     ]
 }
 

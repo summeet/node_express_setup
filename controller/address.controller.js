@@ -1,4 +1,5 @@
-const catchAsync = require("../utils/catchAsync")   
+const catchAsync = require("../utils/catchAsync")
+const addressService = require("../services/address.service")
 
 const createAddress = catchAsync(async (req, res, next) => {
     const address = await addressService.createAddress(req.body)
@@ -20,9 +21,28 @@ const getAddressById = catchAsync(async (req, res, next) => {
     res.send({ address })
 })
 
+const getAddressesByUserId = catchAsync(async (req, res, next) => {
+    const addresses = await addressService.getAddressesByUserId(req.params.userId)
+    res.send({ addresses })
+})
+
+const updateDefaultAddress = catchAsync(async (req, res, next) => {
+    const { userId, addressId } = req.body
+    const address = await addressService.updateDefaultAddress(userId, addressId)
+    res.send({ address })
+})
+
+const getDefaultAddress = catchAsync(async (req, res) => {
+    const address = await addressService.getDefaultAddress(req.params.userId)
+    res.send({ address })
+})
+
 module.exports = {
     createAddress,
     updateAddress,
     deleteAddress,
-    getAddressById
+    getAddressById,
+    getAddressesByUserId,
+    updateDefaultAddress,
+    getDefaultAddress
 }

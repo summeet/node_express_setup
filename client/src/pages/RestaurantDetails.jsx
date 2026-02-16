@@ -109,7 +109,7 @@ const RestaurantDetails = () => {
     }
 
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background pt-20">
             {/* Header Image */}
             <div className="relative h-[400px] w-full">
                 <img
@@ -166,7 +166,7 @@ const RestaurantDetails = () => {
             {/* Content */}
             <div className="container py-12">
                 {/* Action Buttons */}
-                <div className="flex flex-wrap gap-4 mb-8">
+                {/* <div className="flex flex-wrap gap-4 mb-8">
                     <button
                         onClick={() => setShowAddCategory(true)}
                         className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold rounded-xl hover:from-purple-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40"
@@ -175,17 +175,17 @@ const RestaurantDetails = () => {
                         Add Category
                     </button>
                     <button
-                        onClick={() => setShowAddProduct(true)}
+                        onClick={(  ) => setShowAddProduct(true)}
                         className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-primary-hover text-white font-bold rounded-xl hover:from-primary-hover hover:to-primary transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40"
                     >
                         <Plus className="w-5 h-5" />
                         Add Product
                     </button>
-                </div>
+                </div> */}
 
                 {/* Category Filter */}
                 {categories.length > 0 && (
-                    <div className="mb-8">
+                    <div className="mb-8 mt-8">
                         <div className="flex items-center gap-3 overflow-x-auto pb-4 scrollbar-hide">
                             <button
                                 onClick={() => setSelectedCategory('all')}

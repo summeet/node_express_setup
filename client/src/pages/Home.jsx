@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import CategoryList from '../components/CategoryList';
 import RestaurantList from '../components/RestaurantList';
@@ -31,7 +30,6 @@ const Home = () => {
 
     return (
         <div className="min-h-screen bg-background text-text">
-            <Navbar />
             <Hero />
             <CategoryList categories={categories} />
             <RestaurantList restaurants={restaurants} />

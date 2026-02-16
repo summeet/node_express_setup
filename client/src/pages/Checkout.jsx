@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import { getCart, createOrder, clearCart } from '../services/api';
+import { getCart, createOrder, clearCart, getDefaultAddress, getAddressesByUserId } from '../services/api';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
     MapPin,
     CreditCard,
@@ -11,17 +11,25 @@ import {
     ShoppingBag,
     CheckCircle,
     AlertCircle,
-    ArrowLeft
+    ArrowLeft,
+    ChevronRight,
+    Home,
+    Briefcase,
+    X
 } from 'lucide-react';
+import { useCart } from '../contexts/CartContext';
 
 const Checkout = () => {
     const navigate = useNavigate();
-    const [cart, setCart] = useState(null);
     const [loading, setLoading] = useState(true);
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState(null);
     const [orderSuccess, setOrderSuccess] = useState(false);
     const [orderNumber, setOrderNumber] = useState('');
+    const [savedAddresses, setSavedAddresses] = useState([]);
+    const [isSelectingAddress, setIsSelectingAddress] = useState(false);
+
+    const { cart, fetchCart } = useCart()
 
     // Form state
     const [deliveryAddress, setDeliveryAddress] = useState({
@@ -37,9 +45,56 @@ const Checkout = () => {
     const [formErrors, setFormErrors] = useState({});
 
     useEffect(() => {
-        loadCart();
         loadUserData();
+        fetchUserAddresses();
     }, []);
+
+    const fetchUserAddresses = async () => {
+        try {
+            const user = JSON.parse(localStorage.getItem('user'));
+            const [defaultRes, allRes] = await Promise.all([
+                getDefaultAddress(user._id),
+                getAddressesByUserId(user._id)
+            ]);
+
+            const { address } = defaultRes.data;
+            setSavedAddresses(allRes.data.addresses);
+
+            if (address) {
+                let defaultAddr = {
+                    addressLine: address.address,
+                    city: address.city,
+                    state: address.state,
+                    pinCode: address.pinCode,
+                    country: address.country
+                };
+                setDeliveryAddress(prev => ({
+                    ...prev,
+                    ...defaultAddr
+                }));
+            }
+        } catch (err) {
+            console.error('Failed to fetch user addresses:', err);
+            // Don't set error if it's just no default address found
+            if (err.response?.status !== 404) {
+                setError('Failed to fetch user addresses. Please try again.');
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleSelectSavedAddress = (addr) => {
+        setDeliveryAddress(prev => ({
+            ...prev,
+            addressLine: addr.address,
+            city: addr.city,
+            state: addr.state,
+            pinCode: addr.pinCode.toString(),
+            country: addr.country
+        }));
+        setIsSelectingAddress(false);
+    };
 
     const loadUserData = () => {
         const user = JSON.parse(localStorage.getItem('user'));
@@ -47,30 +102,8 @@ const Checkout = () => {
             setDeliveryAddress(prev => ({
                 ...prev,
                 name: user.name || '',
-                phone: user.phone || ''
+                phone: user.contact || ''
             }));
-        }
-    };
-
-    const loadCart = async () => {
-        try {
-            setLoading(true);
-            const user = JSON.parse(localStorage.getItem('user'));
-            if (!user) {
-                navigate('/login');
-                return;
-            }
-            const response = await getCart(user._id);
-            if (!response.data.cart || response.data.cart.items.length === 0) {
-                navigate('/cart');
-                return;
-            }
-            setCart(response.data.cart);
-        } catch (err) {
-            console.error('Failed to load cart:', err);
-            setError('Failed to load cart. Please try again.');
-        } finally {
-            setLoading(false);
         }
     };
 
@@ -93,14 +126,14 @@ const Checkout = () => {
 
     const validateForm = () => {
         const errors = {};
+        console.log('deliveryAddress', deliveryAddress)
         if (!deliveryAddress.name.trim()) errors.name = 'Name is required';
-        if (!deliveryAddress.phone.trim()) errors.phone = 'Phone is required';
+        if (!deliveryAddress.phone) errors.phone = 'Phone is required';
         else if (!/^\d{10}$/.test(deliveryAddress.phone)) errors.phone = 'Invalid phone number';
         if (!deliveryAddress.addressLine.trim()) errors.addressLine = 'Address is required';
         if (!deliveryAddress.city.trim()) errors.city = 'City is required';
         if (!deliveryAddress.state.trim()) errors.state = 'State is required';
-        if (!deliveryAddress.pinCode.trim()) errors.pinCode = 'PIN code is required';
-        else if (!/^\d{6}$/.test(deliveryAddress.pinCode)) errors.pinCode = 'Invalid PIN code';
+        if (!deliveryAddress.pinCode || !/^\d{6}$/.test(deliveryAddress.pinCode.toString())) errors.pinCode = 'Invalid PIN code';
 
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
@@ -153,6 +186,7 @@ const Checkout = () => {
 
             // Clear cart after successful order
             await clearCart(user._id);
+            await fetchCart(); // Reset global cart count
 
             setOrderNumber(response.data.order.orderNumber);
             setOrderSuccess(true);
@@ -167,7 +201,6 @@ const Checkout = () => {
     if (loading) {
         return (
             <>
-                <Navbar />
                 <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
                     <div className="container mx-auto px-4 pt-28 pb-12">
                         <div className="flex items-center justify-center min-h-[400px]">
@@ -185,11 +218,10 @@ const Checkout = () => {
     if (orderSuccess) {
         return (
             <>
-                <Navbar />
                 <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-                    <div className="container mx-auto px-4 pt-28 pb-12">
-                        <div className="max-w-2xl mx-auto">
-                            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
+                    <div className="container mx-auto px-4 pt-28 pb-12 ">
+                        <div className="max-w-2xl mx-auto pt-20">
+                            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center mt-20">
                                 <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <CheckCircle className="w-12 h-12 text-green-600" />
                                 </div>
@@ -227,7 +259,6 @@ const Checkout = () => {
 
     return (
         <>
-            <Navbar />
             <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 mt-20 pt-10">
                 <div className="container mx-auto px-4 pt-28 pb-12">
                     {/* Header */}
@@ -259,11 +290,22 @@ const Checkout = () => {
                         <div className="lg:col-span-2 space-y-6">
                             {/* Delivery Address */}
                             <div className="bg-white rounded-xl shadow-md p-6 border border-slate-200">
-                                <div className="flex items-center gap-3 mb-6 ">
-                                    <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                                        <MapPin className="w-5 h-5 text-indigo-600" />
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                            <MapPin className="w-5 h-5 text-indigo-600" />
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-slate-900 mb-0">Delivery Address</h2>
                                     </div>
-                                    <h2 className="text-2xl font-bold text-slate-900 mb-0">Delivery Address</h2>
+                                    {savedAddresses.length > 0 && (
+                                        <button
+                                            onClick={() => setIsSelectingAddress(true)}
+                                            className="text-indigo-600 font-bold hover:text-indigo-700 transition-colors flex items-center gap-1"
+                                        >
+                                            Change
+                                            <ChevronRight className="w-4 h-4" />
+                                        </button>
+                                    )}
                                 </div>
 
                                 <div className="grid md:grid-cols-2 gap-4">
@@ -542,6 +584,67 @@ const Checkout = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Address Selection Modal */}
+            <AnimatePresence>
+                {isSelectingAddress && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsSelectingAddress(false)}
+                            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
+                        />
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                            className="bg-white rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl relative z-10"
+                        >
+                            <div className="p-6 border-b border-slate-100 flex items-center justify-between">
+                                <h3 className="text-xl font-bold text-slate-900">Select Delivery Address</h3>
+                                <button
+                                    onClick={() => setIsSelectingAddress(false)}
+                                    className="p-2 hover:bg-slate-50 rounded-full transition-colors"
+                                >
+                                    <X className="w-5 h-5 text-slate-400" />
+                                </button>
+                            </div>
+
+                            <div className="p-6 max-h-[60vh] overflow-y-auto space-y-4">
+                                {savedAddresses.map((addr) => (
+                                    <button
+                                        key={addr._id}
+                                        onClick={() => handleSelectSavedAddress(addr)}
+                                        className="w-full text-left p-4 rounded-2xl border-2 border-slate-100 hover:border-indigo-600 hover:bg-indigo-50/50 transition-all group flex gap-4"
+                                    >
+                                        <div className="p-3 bg-slate-100 rounded-xl group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors">
+                                            {addr.label === 'home' ? <Home className="w-5 h-5" /> :
+                                                addr.label === 'work' ? <Briefcase className="w-5 h-5" /> :
+                                                    <MapPin className="w-5 h-5" />}
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-slate-900 capitalize mb-1">{addr.label}</p>
+                                            <p className="text-sm text-slate-600 line-clamp-2">
+                                                {addr.address}, {addr.city}, {addr.state} - {addr.pinCode}
+                                            </p>
+                                        </div>
+                                    </button>
+                                ))}
+
+                                <button
+                                    onClick={() => navigate('/saved-addresses')}
+                                    className="w-full p-4 rounded-2xl border-2 border-dashed border-slate-200 text-slate-500 font-bold hover:border-indigo-600 hover:text-indigo-600 transition-all flex items-center justify-center gap-2"
+                                >
+                                    <MapPin className="w-5 h-5" />
+                                    Manage Addresses
+                                </button>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </>
     );
 };

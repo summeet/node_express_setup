@@ -61,7 +61,7 @@ const RestaurantList = ({ restaurants }) => {
                                                 <span>{res.address ? res.address.split(',')[0] : 'Downtown'}</span>
                                             </div>
                                             <div className="w-1 h-1 bg-gray-300 rounded-full" />
-                                            <span>$$</span>
+                                            <span>₹₹</span>
                                         </div>
 
                                         <div className="flex items-center justify-between pt-4 border-t border-gray-100/50">

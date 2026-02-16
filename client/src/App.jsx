@@ -7,10 +7,15 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
+import SavedAddresses from './pages/SavedAddresses';
+import Orders from './pages/Orders';
+import OrderDetails from './pages/OrderDetails';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <Router>
+      <Navbar />
       <Toaster
         position="top-right"
         toastOptions={{
@@ -39,6 +44,9 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/saved-addresses" element={<SavedAddresses />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/orders/:id" element={<OrderDetails />} />
         <Route path="/restaurant/:id" element={<RestaurantDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

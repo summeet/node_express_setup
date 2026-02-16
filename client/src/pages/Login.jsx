@@ -3,8 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Utensils, Mail, Lock, Loader2 } from 'lucide-react';
 import { login } from '../services/api';
+import { useCart } from '../contexts/CartContext';
 
 const Login = () => {
+    const { fetchCart } = useCart();
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -22,6 +24,7 @@ const Login = () => {
             const response = await login(formData.email, formData.password);
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('user', JSON.stringify(response.data.user));
+            await fetchCart();
             navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || 'Login failed');

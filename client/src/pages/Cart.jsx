@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../contexts/CartContext';
-import Navbar from '../components/Navbar';
 import { getCart, updateCartQuantity, removeFromCart, clearCart } from '../services/api';
 import { Trash2, ShoppingBag, Plus, Minus, X } from 'lucide-react';
 import { Link } from "react-router-dom"
@@ -89,7 +88,7 @@ const CartPage = () => {
 
   const calculateSubtotal = () => {
     if (!cart || !cart.items) return 0;
-    return cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return cart.items.reduce((total, item) => total + (Number(item.price || 0) * item.quantity), 0);
   };
 
   const calculateTotal = () => {
@@ -101,7 +100,6 @@ const CartPage = () => {
   if (loading) {
     return (
       <>
-        <Navbar />
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
           <div className="container mx-auto px-4 pt-28 pb-12">
             <div className="flex items-center justify-center min-h-[400px]">
@@ -119,7 +117,6 @@ const CartPage = () => {
   if (error) {
     return (
       <>
-        <Navbar />
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
           <div className="container mx-auto px-4 pt-28 pb-12">
             <div className="flex items-center justify-center min-h-[400px]">
@@ -147,7 +144,6 @@ const CartPage = () => {
 
   return (
     <>
-      <Navbar />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 mt-20 pt-10">
         <div className="container mx-auto px-4 pt-28 pb-12">
           {/* Header */}
@@ -229,7 +225,7 @@ const CartPage = () => {
                                 <p className="text-sm text-slate-500 mb-2">{product.description}</p>
                               )}
                               <p className="text-slate-600">
-                                ${item.price.toFixed(2)} each
+                                ₹{item.price.toFixed(2)} each
                               </p>
                             </div>
                             <button
@@ -268,7 +264,7 @@ const CartPage = () => {
                             <div className="text-right">
                               <p className="text-sm text-slate-600 mb-1">Item Total</p>
                               <p className="text-2xl font-bold text-indigo-600">
-                                ${(item.price * item.quantity).toFixed(2)}
+                                ₹{(item.price * item.quantity).toFixed(2)}
                               </p>
                             </div>
                           </div>
@@ -287,17 +283,17 @@ const CartPage = () => {
                   <div className="space-y-4 mb-6">
                     <div className="flex justify-between text-slate-700">
                       <span>Subtotal</span>
-                      <span className="font-semibold">${calculateSubtotal().toFixed(2)}</span>
+                      <span className="font-semibold">₹{calculateSubtotal().toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-slate-700">
                       <span>Tax (10%)</span>
-                      <span className="font-semibold">${(calculateSubtotal() * 0.1).toFixed(2)}</span>
+                      <span className="font-semibold">₹{(calculateSubtotal() * 0.1).toFixed(2)}</span>
                     </div>
                     <div className="border-t border-slate-200 pt-4">
                       <div className="flex justify-between items-center">
                         <span className="text-lg font-bold text-slate-900">Total</span>
                         <span className="text-3xl font-bold text-indigo-600">
-                          ${calculateTotal().toFixed(2)}
+                          ₹{calculateTotal().toFixed(2)}
                         </span>
                       </div>
                     </div>

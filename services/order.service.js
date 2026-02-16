@@ -8,12 +8,12 @@ const createOrder = async (orderData) => {
 }
 
 const getOrderById = async (orderId) => {
-    const order = await Order.findById(orderId)
+    const order = await Order.findById(orderId).populate('items.productId')
     if (!order) {
         throw new ApiError(httpStatus.NOT_FOUND, "order not found")
     }
     return order
-} 
+}
 
 const updateOrderStatus = async (orderId, status) => {
     const order = await getOrderById(orderId)
@@ -30,6 +30,8 @@ const deleteOrder = async (orderId) => {
 
 const getOrdersByUserId = async (userId) => {
     const orders = await Order.find({ userId })
+        .populate('items.productId')
+        .sort({ createdAt: -1 })
     return orders
 }
 

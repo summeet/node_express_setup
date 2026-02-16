@@ -1,101 +1,104 @@
-# RESTful API Node Server Boilerplate
+# CraveDash - Modern Food Delivery Platform
 
-A robust and scalable RESTful API boilerplate built with Node.js, Express, and MongoDB. This project follows a layered architecture (Controller-Service-Repository pattern) and includes comprehensive error handling and configuration management.
+CraveDash is a full-stack, robust, and scalable food delivery application built with React, Node.js, Express, and MongoDB. It features a premium UI, real-time cart synchronization, and a comprehensive order management system.
 
-## Features
+## 🚀 Key Features
 
-- **Express.js**: Fast, unopinionated, minimalist web framework for Node.js.
-- **MongoDB & Mongoose**: Object Data Modeling (ODM) library for MongoDB and Node.js.
-- **Layered Architecture**: Separation of concerns with Routes, Controllers, Services, and Schemas.
-- **Centralized Error Handling**: Custom `ApiError` class and global error handling middleware.
-- **Validation**: Mongoose schema validation with custom error formatting.
-- **Environment Configuration**: Easy configuration using `.env` files.
-- **HTTP Status Constants**: Consistent use of HTTP status codes.
+- **Premium UI/UX**: Built with React, Tailwind-inspired Vanilla CSS, and Framer Motion for smooth animations.
+- **Global Navigation**: Unified Navbar with real-time authentication state synchronization.
+- **Discovery**: Integrated product and restaurant search functionality.
+- **Cart Management**: Persistent shopping cart with instant quantity updates across the application.
+- **Secure Ordering**: Role-based access control (RBAC), JWT authentication, and secure checkout flow.
+- **Address Management**: Save and manage multiple delivery locations with a default preference.
+- **API Documentation**: Automated Swagger generation and full Postman collection included.
 
-## Project Structure
+## 📁 Project Structure
 
-```
+```bash
 node_base_setup/
-├── config/             # Environment variables and configuration
-├── constant/           # Constants (e.g., HTTP status codes)
-├── controller/         # Request validation and response handling
-├── middleware/         # Application middleware (Error handling)
-├── routes/             # API route definitions
-├── schemas/            # Mongoose models and schemas
-├── services/           # Business logic and database interactions
-├── utils/              # Utility classes (ApiError, etc.)
-├── index.js            # App entry point
-└── package.json        # Project metadata and dependencies
+├── client/              # Frontend React application
+│   ├── src/
+│   │   ├── components/  # Reusable UI components (Navbar, ProductCard, etc.)
+│   │   ├── pages/       # Page views (Home, Checkout, Orders, etc.)
+│   │   └── contexts/    # React Contexts (CartProvider, etc.)
+├── config/              # Server configuration and RBAC roles
+├── controller/          # Request validation and API logic
+├── routes/              # Express API route definitions
+├── schemas/             # Mongoose models and data schemas
+├── services/            # Business logic and database interactions
+├── index.js             # Backend entry point
+└── cravdash_postman_collection.json # Direct import for Postman testing
 ```
 
-## Getting Started
+## 🛠️ Getting Started
 
 ### Prerequisites
 
-- Node.js (v14+ recommended)
-- MongoDB (running locally or a cloud instance)
+- **Node.js** (v16+ recommended)
+- **MongoDB** (running locally or a cloud instance)
 
 ### Installation
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd node_base_setup
-    ```
+1. **Clone and Install**:
+```bash
+git clone <repository-url>
+cd node_base_setup
+npm install
+cd client && npm install
+cd ..
+```
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+2. **Environment Setup**:
+Create a `.env` file in the root directory:
+```env
+PORT=3001
+MONGODB_URI=mongodb://localhost:27017/cravdash
+JWT_SECRET=your_jwt_secret_here
+NODE_ENV=development
+```
 
-3.  **Configure Environment Variables:**
-    Create a `.env` file in the root directory and add the following:
-    ```env
-    PORT=3001
-    MONGODB_URI=mongodb://localhost:27017/your_database_name
-    NODE_ENV=development
-    ```
+### Running the Application
 
-### Running the Server
+You can run both client and server simultaneously using:
+```bash
+npm run dev
+```
+- **Backend**: `http://localhost:3001`
+- **Frontend**: `http://localhost:5173` (or configured Vite port)
 
--   **Development Mode** (with nodemon):
-    ```bash
-    npm start
-    ```
-    The server will start on `http://localhost:3001` (or your configured port).
+## 📡 API Documentation
 
-## API Endpoints
+### Postman
+A pre-configured Postman collection is provided in the root directory: `cravdash_postman_collection.json`. Import this into Postman to test all endpoints instantly.
 
-### Users
+### Swagger
+Interactive API documentation is available at:
+- **Local**: `http://localhost:3001/api-docs`
+- **JSON Definition**: `./swagger-output.json`
 
-| Method | Endpoint      | Description           |
-| :----- | :------------ | :-------------------- |
-| POST   | `/api/users`  | Create a new user     |
-| GET    | `/api/users`  | Get all users         |
-| GET    | `/api/users/:id` | Get user by ID     |
-| PUT    | `/api/users/:id` | Update user by ID  |
-| DELETE | `/api/users/:id` | Delete user by ID  |
+### Core Endpoints
 
-## Error Handling
+| Category | Endpoint | Description |
+| :--- | :--- | :--- |
+| **Auth** | `POST /api/auth/login` | User authentication |
+| **Restaurants** | `GET /api/restaurants` | List all venues |
+| **Products** | `GET /api/products/restaurant/:id` | Get menu for a restaurant |
+| **Cart** | `POST /api/cart/add` | Add product to bag |
+| **Orders** | `POST /api/orders` | Place a new order |
+| **Addresses** | `GET /api/addresses/user/:id` | Fetch saved locations |
 
-The application uses a centralized error handling mechanism.
--   **Operational Errors**: Handled gracefully with appropriate HTTP status codes and messages (e.g., Validation Errors, Not Found).
--   **Programmer Errors**: In production, these are generic "Internal Server Error" to prevent leaking sensitive details.
--   **Validation Errors**: Mongoose validation errors are formatted into a clean JSON structure:
-    ```json
-    {
-      "code": 400,
-      "message": "Validation failed",
-      "errors": {
-        "email": "Invalid email address",
-        "name": "Path `name` is required."
-      }
-    }
-    ```
+## 🧪 Error Handling
 
-## Technologies Used
+CraveDash uses a centralized error-handling system:
+- **Custom ApiError Class**: For consistent error responses.
+- **Joi Validation**: Schema-based validation for all incoming requests.
+- **Global Middleware**: Catches and formats all operational errors.
 
--   [Node.js](https://nodejs.org/)
--   [Express](https://expressjs.com/)
--   [Mongoose](https://mongoosejs.com/)
--   [Dotenv](https://www.npmjs.com/package/dotenv)
+## 🧰 Tech Stack
+
+- **Frontend**: React, Framer Motion, Lucide Icons, Axios, React Hot Toast.
+- **Backend**: Node.js, Express, Mongoose, JWT, BcryptJS.
+- **Docs**: Swagger Autogen.
+
+---
+Developed by **Sumit FE** @ Doodleblue

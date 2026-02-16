@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { User, Mail, Lock, Phone, Calendar, Loader2 } from 'lucide-react';
 import { register } from '../services/api';
+import { useCart } from '../contexts/CartContext';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ const Register = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const { fetchCart } = useCart();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,6 +30,7 @@ const Register = () => {
             const response = await register(formData);
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('user', JSON.stringify(response.data.user));
+            await fetchCart();
             navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || 'Registration failed');

@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { Plus, Star, Minus } from 'lucide-react';
 import { addToCart, updateCartQuantity, removeFromCart, getCart } from '../services/api';
 import toast from 'react-hot-toast';
+import { useCart } from '../contexts/CartContext';
 
 const ProductCard = ({ product }) => {
+    const { fetchCart } = useCart();
     const [quantity, setQuantity] = useState(0);
     const [loading, setLoading] = useState(false);
 
@@ -55,6 +57,7 @@ const ProductCard = ({ product }) => {
         try {
             await addToCart(userId, product._id, 1);
             setQuantity(1);
+            await fetchCart(); // Update global cart count
             toast.success(`${product.name} added to cart!`);
         } catch (error) {
             toast.error(error.response?.data?.message || 'Failed to add to cart');
@@ -75,6 +78,7 @@ const ProductCard = ({ product }) => {
             const newQuantity = quantity + 1;
             await updateCartQuantity(userId, product._id, newQuantity);
             setQuantity(newQuantity);
+            await fetchCart(); // Update global cart count
             toast.success('Quantity updated');
         } catch (error) {
             toast.error(error.response?.data?.message || 'Failed to update quantity');
@@ -103,6 +107,7 @@ const ProductCard = ({ product }) => {
                 setQuantity(newQuantity);
                 toast.success('Quantity updated');
             }
+            await fetchCart(); // Update global cart count
         } catch (error) {
             toast.error(error.response?.data?.message || 'Failed to update quantity');
         } finally {
@@ -152,7 +157,7 @@ const ProductCard = ({ product }) => {
 
             <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
                 <span className="text-xl font-black text-secondary">
-                    ${product.price}
+                    ₹{product.price}
                 </span>
 
                 {quantity === 0 ? (

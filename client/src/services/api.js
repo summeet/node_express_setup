@@ -60,6 +60,14 @@ export const createOrder = (orderData) => api.post('/orders', orderData);
 export const getOrdersByUserId = (userId) => api.get(`/orders/user/${userId}`);
 export const getOrderById = (id) => api.get(`/orders/${id}`);
 
+// Address APIs
+export const getAddressesByUserId = (userId) => api.get(`/addresses/user/${userId}`);
+export const createAddress = (addressData) => api.post('/addresses', addressData);
+export const updateAddress = (id, addressData) => api.put(`/addresses/${id}`, addressData);
+export const deleteAddress = (id) => api.delete(`/addresses/${id}`);
+export const setDefaultAddress = (userId, addressId) => api.patch('/addresses/default', { userId, addressId });
+export const getDefaultAddress = (userId) => api.get(`/addresses/default/${userId}`);
+
 // Notification APIs (External API)
 const NOTIFICATION_API_URL = 'https://nedevbe.zimbea.com/api';
 
