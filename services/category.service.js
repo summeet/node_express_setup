@@ -37,6 +37,10 @@ const queryCategoriesByRestaurantId = async (restaurantId) => {
     return await categoryModel.find({ restaurantId })
 }
 
+const getCategoryByName = async (name) => {
+    return await categoryModel.findOne({ name: { $regex: new RegExp(name, 'i') } });
+}
+
 
 module.exports = {
     createCategory,
@@ -44,5 +48,6 @@ module.exports = {
     getCategoryById,
     updateCategory,
     deleteCategory,
-    queryCategoriesByRestaurantId
+    queryCategoriesByRestaurantId,
+    getCategoryByName
 }

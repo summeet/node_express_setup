@@ -47,12 +47,20 @@ const getCategoryByRestaurantId = catchAsync(async (req, res) => {
     })
 })
 
+const getCategoryByName = catchAsync(async (req, res) => {
+    const category = await categoryService.getCategoryByName(req.params.name)
+    res.status(httpStatus.SUCCESS).send({
+        data: category
+    })
+})
+
 module.exports = {
     createCategory,
     queryCategories,
     getCategoryById,
     updateCategory,
     deleteCategory,
-    getCategoryByRestaurantId
+    getCategoryByRestaurantId,
+    getCategoryByName
 }
 
