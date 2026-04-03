@@ -1,6 +1,12 @@
 const express = require("express");
 const swaggerUi = require("swagger-ui-express");
-const swaggerFile = require("./swagger-output.json");
+let swaggerFile;
+try {
+    swaggerFile = require("./swagger-output.json");
+} catch (e) {
+    console.warn("Swagger output file not found. API documentation will be unavailable.");
+}
+
 const config = require("./config/config")
 const routes = require("./routes")
 const { errorHandler, errorConverter } = require("./middleware/error")
@@ -20,7 +26,9 @@ app.use(express.json())
 
 app.use('/api', routes)
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+if (swaggerFile) {
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+}
 
 app.use((req, res, next) => {
     next(new ApiError(httpStatus.NOT_FOUND, 'Not Found'))

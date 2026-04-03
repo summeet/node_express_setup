@@ -55,7 +55,10 @@ const getOrdersByUserIdAndStatus = async (userId, status) => {
     return orders
 }
 
-const queryOrders = async () => 
+const queryOrders = async (filter) => {
+    const orders = await Order.find(filter)
+    return orders
+}
 
 module.exports = {
     createOrder,

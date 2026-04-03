@@ -8,7 +8,8 @@
     "client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "seed": "node seed.js",
-    "swagger": "node swagger.js"
+    "swagger": "node swagger.js",
+    "build": "node swagger.js"
   },
   "keywords": [],
   "author": "",
