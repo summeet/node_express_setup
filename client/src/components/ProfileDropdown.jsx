@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
-import { User, ChevronDown, MapPin, Package, UserCircle, CreditCard, Bell, LogOut } from 'lucide-react';
+import { User, ChevronDown, MapPin, Package, UserCircle, CreditCard, Bell, LogOut, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ProfileDropdown = ({ user, setUser, navigate }) => {
@@ -18,13 +18,18 @@ const ProfileDropdown = ({ user, setUser, navigate }) => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const profileMenuItems = [
+    let profileMenuItems = [
         { icon: MapPin, label: 'Saved Addresses', path: '/saved-addresses' },
         { icon: Package, label: 'Orders', path: '/orders' },
         { icon: UserCircle, label: 'My Profile', path: '/profile' },
         { icon: CreditCard, label: 'Saved Cards', path: '/saved-cards' },
         { icon: Bell, label: 'Notifications', path: '/notifications' },
     ];
+
+    if (user.role === 'admin') {
+        profileMenuItems = []
+        profileMenuItems.unshift({ icon: Shield, label: 'Admin Dashboard', path: '/admin/dashboard' });
+    }
 
     const handleLogout = () => {
         localStorage.removeItem('token');

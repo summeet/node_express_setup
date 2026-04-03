@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Utensils, Mail, Lock, Loader2 } from 'lucide-react';
+import { Utensils, Mail, Lock, Loader2, EyeOff, Eye } from 'lucide-react';
 import { login } from '../services/api';
 import { useCart } from '../contexts/CartContext';
 
@@ -10,6 +10,7 @@ const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -22,10 +23,12 @@ const Login = () => {
         setLoading(true);
         try {
             const response = await login(formData.email, formData.password);
-            localStorage.setItem('token', response.data.token);
-            localStorage.setItem('user', JSON.stringify(response.data.user));
+            const { token, user } = response.data;
+            localStorage.setItem('token', token);
+            localStorage.setItem('user', JSON.stringify(user));
             await fetchCart();
-            navigate('/');
+            const routeTo = user.role === 'admin' ? '/admin' : '/';
+            navigate(routeTo);
         } catch (err) {
             setError(err.response?.data?.message || 'Login failed');
         } finally {
@@ -81,7 +84,7 @@ const Login = () => {
                         <div className="relative">
                             <Lock className="absolute left-4 top-3.5 w-5 h-5 text-gray-400" />
                             <input
-                                type="password"
+                                type={showPassword ? 'text' : 'password'}
                                 name="password"
                                 required
                                 className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-primary focus:outline-none transition-colors font-medium text-secondary shadow-sm"
@@ -89,6 +92,18 @@ const Login = () => {
                                 value={formData.password}
                                 onChange={handleChange}
                             />
+                            <a className='absolute right-4 top-4 w-4 h-4 text-gray-400 hover:text-gray-900 transition-colors' href="#" onClick={(e) => {
+                                e.preventDefault();
+                                setShowPassword(!showPassword);
+                            }}>
+                                {
+                                    showPassword ? (
+                                        <Eye className="w-5 h-5 text-gray-400" />
+                                    ) : (
+                                        <EyeOff className="w-5 h-5 text-gray-400" />
+                                    )
+                                }
+                            </a>
                         </div>
                     </div>
 

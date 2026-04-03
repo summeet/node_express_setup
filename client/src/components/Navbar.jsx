@@ -42,16 +42,13 @@ const Navbar = () => {
         navigate('/cart');
     };
 
-
-
-
     const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
 
     if (isAuthPage) return null;
 
     return (
-        <nav className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-white/20">
-            <div className="container flex items-center justify-between h-20">
+        <nav className={`fixed top-0 z-50 bg-white/70 backdrop-blur-md border-b border-white/20 transition-all duration-300 ${user?.role === 'admin' ? 'left-64 right-0' : 'left-0 right-0'}`}>
+            <div className={`flex items-center justify-between h-20 ${user?.role === 'admin' ? 'px-8' : 'container'}`}>
                 <Link to="/" className="flex items-center gap-2 cursor-pointer">
                     <div className="bg-primary p-2 rounded-xl">
                         <Utensils className="text-white" />

@@ -4,6 +4,7 @@ const auth = require("../middleware/auth")
 const authorize = require("../middleware/authorize")
 
 Router.post("/", auth, authorize(["createOrder"]), orderController.createOrder)
+Router.get("/", auth, authorize(["queryOrders"]), orderController.getAllOrdersByUserId)
 Router.get("/:id", auth, authorize(["getOrderById"]), orderController.getOrderById)
 Router.put("/:id", auth, authorize(["updateOrderStatus"]), orderController.updateOrderStatus)
 Router.delete("/:id", auth, authorize(["deleteOrder"]), orderController.deleteOrder)

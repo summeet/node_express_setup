@@ -11,6 +11,13 @@ import SavedAddresses from './pages/SavedAddresses';
 import Orders from './pages/Orders';
 import OrderDetails from './pages/OrderDetails';
 import Navbar from './components/Navbar';
+import AdminLayout from './components/admin/AdminLayout';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminRestaurants from './pages/admin/AdminRestaurants';
+import AdminProducts from './pages/admin/AdminProducts';
+import AdminOrders from './pages/admin/AdminOrders';
+import AdminUsers from './pages/admin/AdminUsers';
+import AdminCategories from './pages/admin/AdminCategories';
 
 const App = () => {
   return (
@@ -50,6 +57,16 @@ const App = () => {
         <Route path="/restaurant/:id" element={<RestaurantDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="restaurants" element={<AdminRestaurants />} />
+          <Route path="products" element={<AdminProducts />} />
+          <Route path="orders" element={<AdminOrders />} />
+          <Route path="users" element={<AdminUsers />} />
+          <Route path="categories" element={<AdminCategories />} />
+        </Route>
       </Routes>
     </Router>
   );

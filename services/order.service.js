@@ -55,6 +55,8 @@ const getOrdersByUserIdAndStatus = async (userId, status) => {
     return orders
 }
 
+const queryOrders = async () => 
+
 module.exports = {
     createOrder,
     getOrderById,
@@ -64,5 +66,6 @@ module.exports = {
     getOrdersByStatus,
     getOrdersByRestaurantId,
     getOrdersByRestaurantIdAndStatus,
-    getOrdersByUserIdAndStatus
+    getOrdersByUserIdAndStatus,
+    queryOrders
 }

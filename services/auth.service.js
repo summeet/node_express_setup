@@ -18,7 +18,7 @@ const login = async (loginBody) => {
   const { email, contact, password } = loginBody
   const user = await User.findOne({ $or: [{ email }, { contact }] })
   if (!user || !(await user.isPasswordMatch(password))) {
-    throw new ApiError(httpStatus.UNAUTHORIZED, "Incorrect email or password")
+    throw new ApiError(httpStatus.BAD_REQUEST, "Incorrect email or password")
   }
   const token = generateAuthToken(user)
   const { password: _, ...userWithoutPassword } = user.toObject();

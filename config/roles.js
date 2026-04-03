@@ -7,6 +7,7 @@ const allRoles = {
         'queryProductsByRestaurantId', 'queryProductsByMenuId', 'getProductByMenuId', 'addBulkProducts',
         'addVariants', 'updateVariant', 'queryVariants', 'removeVariant',
         'createCart', 'getCart', 'updateCart', 'deleteCart', 'clearCart',
+        'queryOrders', 'updateOrderStatus', 'deleteOrder'
     ],
     user: [
         'queryProducts', 'getProductById', 'updateProduct',

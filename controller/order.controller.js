@@ -7,6 +7,11 @@ const createOrder = catchAsync(async (req, res, next) => {
     res.send({ order })
 })
 
+const queryOrders = catchAsync(async (req, res, next) => {
+    const orders = await orderService.queryOrders(req.query)
+    res.send({ orders })
+})
+
 const getOrderById = catchAsync(async (req, res, next) => {
     const order = await orderService.getOrderById(req.params.id)
     res.send({ order })
@@ -32,8 +37,8 @@ const getOrdersByStatus = catchAsync(async (req, res, next) => {
     res.send({ orders })
 })
 
-const getAllOrders = catchAsync(async (req, res, next) => {
-    const orders = await orderService.getAllOrders()
+const getAllOrdersByUserId = catchAsync(async (req, res, next) => {
+    const orders = await orderService.getOrdersByUserId()
     res.send({ orders })
 })
 
@@ -44,5 +49,6 @@ module.exports = {
     deleteOrder,
     getOrdersByUserId,
     getOrdersByStatus,
-    getAllOrders
+    getAllOrdersByUserId,
+    queryOrders
 }

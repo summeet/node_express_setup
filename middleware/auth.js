@@ -4,7 +4,7 @@ const BlacklistedToken = require("../schemas/blacklistedToken.schema")
 module.exports = async function (req, res, next) {
     const authHeader = req.headers["authorization"]
 
-    if(!authHeader){
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
         return res.status(401).send({ message: "unauthorized" })
     }
 
@@ -19,7 +19,7 @@ module.exports = async function (req, res, next) {
         req.user = decoded
         next()
     } catch (error) {
-        if(error.name === "TokenExpiredError"){
+        if (error.name === "TokenExpiredError") {
             return res.status(401).json({ message: "Token expired" });
         }
         return res.status(401).send({ message: "unauthorized" })
