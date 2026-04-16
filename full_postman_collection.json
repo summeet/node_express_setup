@@ -1,0 +1,3964 @@
+{
+    "item": [
+        {
+            "id": "6f0da697-0a22-4e38-97e6-dcc4ef816249",
+            "name": "/api/users/",
+            "request": {
+                "name": "/api/users/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "users",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "method": "POST",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"contact\": \"<number>\",\n  \"role\": \"<string>\"\n}",
+                    "options": {
+                        "raw": {
+                            "headerFamily": "json",
+                            "language": "json"
+                        }
+                    }
+                },
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "ff81ac39-c531-479d-b2fe-573f6192ca14",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "users",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"contact\": \"<number>\",\n  \"role\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "6230acf2-cdb5-4ea8-bbd3-92a3d3bef6d4",
+            "name": "/api/users/",
+            "request": {
+                "name": "/api/users/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "users",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "c617749b-d042-48fe-b296-1e6997432b2c",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "users",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "fc7d320f-5be6-431a-a6a4-92f0e6be3f90",
+            "name": "/api/users/:id",
+            "request": {
+                "name": "/api/users/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "users",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "1d61b32d-c2ca-4bc6-b316-59eaa343bef5",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "users",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "07b14426-ae08-48bb-8192-ba8155d3d027",
+            "name": "/api/users/:id",
+            "request": {
+                "name": "/api/users/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "users",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "method": "PUT",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"contact\": \"<number>\",\n  \"role\": \"<string>\"\n}",
+                    "options": {
+                        "raw": {
+                            "headerFamily": "json",
+                            "language": "json"
+                        }
+                    }
+                },
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "080a9076-dff0-4c3a-bc96-0994b91d2ebd",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "users",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "PUT",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"contact\": \"<number>\",\n  \"role\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "a482e782-5293-4f6a-935b-d01fef41cf0d",
+            "name": "/api/users/:id",
+            "request": {
+                "name": "/api/users/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "users",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "DELETE",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "f7fee431-97f5-4c94-b6eb-82dd9e5ba5a6",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "users",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "f917d77b-0524-4e0a-be36-ca0f818bbf43",
+            "name": "/api/auth/register",
+            "request": {
+                "name": "/api/auth/register",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "auth",
+                        "register"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "method": "POST",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"contact\": \"<number>\",\n  \"role\": \"<string>\"\n}",
+                    "options": {
+                        "raw": {
+                            "headerFamily": "json",
+                            "language": "json"
+                        }
+                    }
+                },
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "8429cf30-fbe1-4f48-8599-d471749ff2be",
+                    "name": "default",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "auth",
+                                "register"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"contact\": \"<number>\",\n  \"role\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "7efa5d0c-801c-40b6-8756-3fadf3b27758",
+            "name": "/api/auth/login",
+            "request": {
+                "name": "/api/auth/login",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "auth",
+                        "login"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "method": "POST",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                    "options": {
+                        "raw": {
+                            "headerFamily": "json",
+                            "language": "json"
+                        }
+                    }
+                },
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "e698a652-e367-4f0c-9d24-a2442a9cf106",
+                    "name": "default",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "auth",
+                                "login"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "fa16ec56-33b0-4b77-b374-c254c584ebfd",
+            "name": "/api/auth/logout",
+            "request": {
+                "name": "/api/auth/logout",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "auth",
+                        "logout"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "POST",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "8570a8c7-67c7-4e15-a4d0-1db75ce79aed",
+                    "name": "OK",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "auth",
+                                "logout"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "02576372-7e86-4586-a2d7-4c405d8d54c9",
+            "name": "/api/restaurants/",
+            "request": {
+                "name": "/api/restaurants/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "restaurants",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "POST",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "ea50048b-f415-4c4e-9926-7f0101b4894e",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "restaurants",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "940636e1-7a8f-4921-8bf7-80855050a326",
+            "name": "/api/restaurants/",
+            "request": {
+                "name": "/api/restaurants/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "restaurants",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "86618977-e7fc-4287-9b0e-63990178b057",
+                    "name": "default",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "restaurants",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "169d28aa-234d-41da-aeca-01e4e94ae369",
+            "name": "/api/restaurants/:id",
+            "request": {
+                "name": "/api/restaurants/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "restaurants",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "311d9ca5-d846-465f-827e-4c4f99fa0336",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "restaurants",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "859d908b-9271-4c35-bcc7-a53c9acc674c",
+            "name": "/api/restaurants/:id",
+            "request": {
+                "name": "/api/restaurants/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "restaurants",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "method": "PUT",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"address\": \"<string>\",\n  \"contact\": \"<number>\",\n  \"image\": \"<string>\",\n  \"rating\": \"<number>\"\n}",
+                    "options": {
+                        "raw": {
+                            "headerFamily": "json",
+                            "language": "json"
+                        }
+                    }
+                },
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "65bebf14-cac3-4a2a-8879-2f5a403243a1",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "restaurants",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "PUT",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"address\": \"<string>\",\n  \"contact\": \"<number>\",\n  \"image\": \"<string>\",\n  \"rating\": \"<number>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "13c0fc82-dc8c-4b41-aee9-1d9d5afb9ce0",
+            "name": "/api/restaurants/:id",
+            "request": {
+                "name": "/api/restaurants/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "restaurants",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "DELETE",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "31bd2940-3124-4934-bb1c-860a6185ff17",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "restaurants",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "118b8853-affc-4bbd-8ca3-9f56524cefb5",
+            "name": "/api/categories/",
+            "request": {
+                "name": "/api/categories/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "categories",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "POST",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "686f5628-d2c4-4e80-bb2b-cf12e1bea73e",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "categories",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "5f16015b-ac5b-4dbf-a178-d71bf1aca36f",
+            "name": "/api/categories/",
+            "request": {
+                "name": "/api/categories/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "categories",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "f96b57f3-d527-4e60-891c-d7b9cf9d6359",
+                    "name": "default",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "categories",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "37e931be-7899-43f9-a233-4e1dce0ea95d",
+            "name": "/api/categories/:id",
+            "request": {
+                "name": "/api/categories/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "categories",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "a2648a9a-5493-4bc1-a239-b12d64ae96b8",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "categories",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "9f70dcaf-d34d-48dd-98c3-59c4e0c46784",
+            "name": "/api/categories/:id",
+            "request": {
+                "name": "/api/categories/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "categories",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "PUT",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "cc9942d6-b1c0-45cf-bd84-b042c053509a",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "categories",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "46dfda29-95fd-48bb-a692-2bdcc6a386a4",
+            "name": "/api/categories/:id",
+            "request": {
+                "name": "/api/categories/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "categories",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "DELETE",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "3049cb32-b74e-4629-aae1-a9a4019f1ca9",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "categories",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "eb1d174b-eba2-4625-a639-98d8e74a9931",
+            "name": "/api/categories/name/:name",
+            "request": {
+                "name": "/api/categories/name/:name",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "categories",
+                        "name",
+                        ":name"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "name",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "f9ffaceb-4546-40fe-a364-50bf5d245b9f",
+                    "name": "default",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "categories",
+                                "name",
+                                ":name"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "name"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "6bdc8d99-4235-453e-94b7-f40a8bfbb5b1",
+            "name": "/api/categories/restaurant/:restaurantId",
+            "request": {
+                "name": "/api/categories/restaurant/:restaurantId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "categories",
+                        "restaurant",
+                        ":restaurantId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "restaurantId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "f7c53399-d21f-4805-a8c2-57c73dc98256",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "categories",
+                                "restaurant",
+                                ":restaurantId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "restaurantId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "ba90f964-d87d-4838-b82a-4500a0fbb4a6",
+            "name": "/api/products/",
+            "request": {
+                "name": "/api/products/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "POST",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "e2951d06-8e4e-41d2-85e2-044e1ad49300",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "a6290378-dd20-4d8b-8cbf-8ee4518eec72",
+            "name": "/api/products/",
+            "request": {
+                "name": "/api/products/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "55f586eb-a291-4d3f-a891-6e79479d9dba",
+                    "name": "default",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "d99dbd49-be28-47f8-ab3f-65d7670ae3fe",
+            "name": "/api/products/:id",
+            "request": {
+                "name": "/api/products/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "7b40092b-cdcf-4ed5-a819-81bcc24a8f54",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "6d1d62b9-662e-4102-884f-628a4ec372b2",
+            "name": "/api/products/:id",
+            "request": {
+                "name": "/api/products/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "method": "PUT",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"image\": \"<string>\",\n  \"category\": \"<string>\",\n  \"restaurantId\": \"<string>\",\n  \"foodType\": \"<string>\"\n}",
+                    "options": {
+                        "raw": {
+                            "headerFamily": "json",
+                            "language": "json"
+                        }
+                    }
+                },
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "69f22c3a-198d-483d-9273-e99b6a56dd8b",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "PUT",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"image\": \"<string>\",\n  \"category\": \"<string>\",\n  \"restaurantId\": \"<string>\",\n  \"foodType\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "d6165d68-fe29-4ba8-a42d-c285f250a4d0",
+            "name": "/api/products/:id",
+            "request": {
+                "name": "/api/products/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "DELETE",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "c8ac75b5-60e7-41ab-853e-5207d6338a6a",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "500d15d7-1530-4fe9-b593-c950db8c29d3",
+            "name": "/api/products/menu/:menuId",
+            "request": {
+                "name": "/api/products/menu/:menuId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        "menu",
+                        ":menuId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "menuId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "7d78c57c-9873-4f36-8e84-6bf7996fbef2",
+                    "name": "default",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                "menu",
+                                ":menuId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "menuId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "67491c00-6de0-4aae-97f6-53f07015563b",
+            "name": "/api/products/restaurant/:restaurantId",
+            "request": {
+                "name": "/api/products/restaurant/:restaurantId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        "restaurant",
+                        ":restaurantId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "restaurantId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "76d0d347-591f-40cf-9c5c-79e604e76ca2",
+                    "name": "default",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                "restaurant",
+                                ":restaurantId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "restaurantId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "83beb295-1e6f-421f-a7b5-fc570b840055",
+            "name": "/api/products/:productId/variants",
+            "request": {
+                "name": "/api/products/:productId/variants",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        ":productId",
+                        "variants"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "productId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "POST",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "67d32359-917b-467e-a352-42784bb5fc01",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                ":productId",
+                                "variants"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "productId"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "d27b9de1-a190-42e4-a3c6-a1d62c11827e",
+            "name": "/api/products/:productId/variants",
+            "request": {
+                "name": "/api/products/:productId/variants",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        ":productId",
+                        "variants"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "productId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "6e1fb398-5274-409b-ab66-313901292d0e",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                ":productId",
+                                "variants"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "productId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "b696adf9-182c-444e-b272-46e23537a288",
+            "name": "/api/products/:productId/variants/:variantId",
+            "request": {
+                "name": "/api/products/:productId/variants/:variantId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        ":productId",
+                        "variants",
+                        ":variantId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "productId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        },
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "variantId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "PUT",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "d59dee9c-8ff4-4835-ac09-1ba6b2dfb3d2",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                ":productId",
+                                "variants",
+                                ":variantId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "productId"
+                                },
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "variantId"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "50549bd0-da89-4060-b8a4-cde1bce2d2d9",
+            "name": "/api/products/:productId/variants/:variantId",
+            "request": {
+                "name": "/api/products/:productId/variants/:variantId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        ":productId",
+                        "variants",
+                        ":variantId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "productId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        },
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "variantId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "DELETE",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "a9bab3b3-b891-403b-8a86-9639a9db1215",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                ":productId",
+                                "variants",
+                                ":variantId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "productId"
+                                },
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "variantId"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "2c77523a-bea6-44e0-98a9-21d946376eea",
+            "name": "/api/products/bulk",
+            "request": {
+                "name": "/api/products/bulk",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "products",
+                        "bulk"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "POST",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "4aa3983c-8514-47c6-ab09-fe8fc3d42294",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "products",
+                                "bulk"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "8d93c841-5946-47de-955a-7e662907eea4",
+            "name": "/api/addresses/",
+            "request": {
+                "name": "/api/addresses/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "addresses",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "POST",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "36b47d41-3027-4fca-9129-cd3db34fb164",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "addresses",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "051cd95f-6b43-4d5d-926c-8cc03f498d89",
+            "name": "/api/addresses/:id",
+            "request": {
+                "name": "/api/addresses/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "addresses",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "PUT",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "e2861b08-44ef-4ff8-a5ee-84b3f20f43b4",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "addresses",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "acb01c16-64ce-4492-acb8-c68f5f041437",
+            "name": "/api/addresses/:id",
+            "request": {
+                "name": "/api/addresses/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "addresses",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "DELETE",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "811a25b6-fee0-4236-bfca-ba7a5f2e1ecb",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "addresses",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "a3f22df6-3e54-4735-b542-b39aa3c42f7e",
+            "name": "/api/addresses/:id",
+            "request": {
+                "name": "/api/addresses/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "addresses",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "40db7aad-375e-4a56-b339-8ef1eb2b77e7",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "addresses",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "5c7b530c-a0b2-47bb-9dfa-1725842881ba",
+            "name": "/api/addresses/user/:userId",
+            "request": {
+                "name": "/api/addresses/user/:userId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "addresses",
+                        "user",
+                        ":userId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "userId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "b2bd7f6a-4f42-4f71-813b-5f733e0f78d6",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "addresses",
+                                "user",
+                                ":userId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "userId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "b6b4b7fd-f146-40ad-b059-537ed9eb806a",
+            "name": "/api/addresses/default",
+            "request": {
+                "name": "/api/addresses/default",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "addresses",
+                        "default"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "PATCH",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "3edbd13a-aea2-44fa-9023-949cdd84fd7e",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "addresses",
+                                "default"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "PATCH",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "c47965fd-9a90-4a8c-9996-5c3943ead6c5",
+            "name": "/api/addresses/default/:userId",
+            "request": {
+                "name": "/api/addresses/default/:userId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "addresses",
+                        "default",
+                        ":userId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "userId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "537bb7f2-3fd0-467a-b6c9-1fad48633bb4",
+                    "name": "OK",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "addresses",
+                                "default",
+                                ":userId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "userId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                },
+                {
+                    "id": "fe4713e4-a9b3-40b8-b314-c6c0e291156f",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "addresses",
+                                "default",
+                                ":userId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "userId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "2e4ab8bd-b539-4d6f-a2af-473eeda04896",
+            "name": "/api/cart/add",
+            "request": {
+                "name": "/api/cart/add",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "cart",
+                        "add"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "POST",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "5e53a74d-3a48-4058-8601-4d022fa089eb",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "cart",
+                                "add"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "5226e14b-3e23-4318-95f1-2bdda11d0f60",
+            "name": "/api/cart/:userId",
+            "request": {
+                "name": "/api/cart/:userId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "cart",
+                        ":userId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "userId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "74112eed-418f-4b1b-99ac-128f31942a6c",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "cart",
+                                ":userId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "userId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "a7c25337-1f62-4f80-a7dc-27b3aa92c7f5",
+            "name": "/api/cart/update",
+            "request": {
+                "name": "/api/cart/update",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "cart",
+                        "update"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "PUT",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "bbc3aca0-8001-4302-95b2-6c8eb4081ab9",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "cart",
+                                "update"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "PUT",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "1fafc19f-d612-42d8-8661-71876b38065c",
+            "name": "/api/cart/delete",
+            "request": {
+                "name": "/api/cart/delete",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "cart",
+                        "delete"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "DELETE",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "904bb2d6-dd17-4ebf-9d5c-893140cd3236",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "cart",
+                                "delete"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "90531e8c-fcb0-4a55-bfd5-4e68237d6992",
+            "name": "/api/cart/clear/:userId",
+            "request": {
+                "name": "/api/cart/clear/:userId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "cart",
+                        "clear",
+                        ":userId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "userId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "DELETE",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "6d5379a7-4aed-451a-87b1-897262d2008a",
+                    "name": "OK",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "cart",
+                                "clear",
+                                ":userId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "userId"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                },
+                {
+                    "id": "bbe23d29-fc80-4296-8fe9-8e4011eee616",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "cart",
+                                "clear",
+                                ":userId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "userId"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "821744b5-1494-4d83-b2d0-2fe5bb71c221",
+            "name": "/api/orders/",
+            "request": {
+                "name": "/api/orders/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "orders",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "POST",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "088b4c83-63fc-4b08-89ab-702bd77adf0d",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "orders",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "e6cfe565-bce4-4106-a9bc-994fb8af8e9b",
+            "name": "/api/orders/",
+            "request": {
+                "name": "/api/orders/",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "orders",
+                        ""
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": []
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "cd5fc299-e8b6-4471-be24-92f21a0e369f",
+                    "name": "OK",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "orders",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                },
+                {
+                    "id": "bfafc44c-bba4-454e-94e9-b193b1960200",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "orders",
+                                ""
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "3be25e39-e493-4742-bbab-e4cdc84c1a38",
+            "name": "/api/orders/:id",
+            "request": {
+                "name": "/api/orders/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "orders",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "989faec1-293d-4a7a-acb6-010bf92e7b87",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "orders",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "ec2393c0-b522-4425-8a58-4c761f85e6b2",
+            "name": "/api/orders/:id",
+            "request": {
+                "name": "/api/orders/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "orders",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "PUT",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "04dd726c-7ece-4b7d-8f4c-41d6f59ddb7f",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "orders",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "d48392b6-904d-4bd4-aee4-baf3efbc9e3e",
+            "name": "/api/orders/:id",
+            "request": {
+                "name": "/api/orders/:id",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "orders",
+                        ":id"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "id",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "DELETE",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "db6638ce-e683-4f79-8695-e724d7d5e5df",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "orders",
+                                ":id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "id"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "d9b0ac84-adf5-4ac0-8ffd-544198c11509",
+            "name": "/api/orders/user/:userId",
+            "request": {
+                "name": "/api/orders/user/:userId",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "orders",
+                        "user",
+                        ":userId"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "userId",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "0dde18a5-f8b3-47e6-91d5-313b8ced64ff",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "orders",
+                                "user",
+                                ":userId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "userId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        },
+        {
+            "id": "e660997c-02e6-4da7-baf5-b057d78d9bd6",
+            "name": "/api/orders/status/:status",
+            "request": {
+                "name": "/api/orders/status/:status",
+                "description": {
+                    "content": "",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "api",
+                        "orders",
+                        "status",
+                        ":status"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "status",
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) ",
+                                "type": "text/plain"
+                            }
+                        }
+                    ]
+                },
+                "method": "GET",
+                "body": {},
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "28dd8df3-0434-4200-b5dc-8529cf177f12",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "api",
+                                "orders",
+                                "status",
+                                ":status"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "status"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [],
+                    "cookie": [],
+                    "_postman_previewlanguage": "text"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        }
+    ],
+    "event": [],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3001"
+        }
+    ],
+    "info": {
+        "_postman_id": "880bbfa0-bafa-4f17-b610-8d57870a8f92",
+        "name": "CraveDash API Documentation",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": {
+            "content": "Official API documentation for the CraveDash Food Delivery Platform. Includes endpoints for Authentication, Restaurants, Products, Cart management, and Orders.",
+            "type": "text/plain"
+        }
+    }
+}

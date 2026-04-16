@@ -8,6 +8,14 @@ const register = async (userBody) => {
   if (await User.isEmailTaken(userBody.email)) {
     throw new ApiError(httpStatus.BAD_REQUEST, "Email already taken");
   }
+  // Format DD/MM/YYYY date if present
+  if (userBody.dob && typeof userBody.dob === 'string' && userBody.dob.includes('/')) {
+    const parts = userBody.dob.split('/');
+    if (parts.length === 3) {
+      userBody.dob = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+    }
+  }
+
   const user = await User.create(userBody);
   const token = generateAuthToken(user);
   const { password: _, ...userWithoutPassword } = user.toObject();

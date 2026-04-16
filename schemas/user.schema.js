@@ -59,7 +59,7 @@ UserSchema.pre("save", async function (next) {
 })
 
 UserSchema.post("save", function (err, doc, next) {
-    if(err.name === "MongoServerError" && err.code === 11000) {
+    if (err.name === "MongoServerError" && err.code === 11000) {
         next(new ApiError(httpStatus.BAD_REQUEST, "Email or contact already Exist!"))
     }
     next()
